@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster');
+
+* {
+    font-family: Lobster;
+    font-size: 60px;
+}
+
+body {
+    background-image: url("images/fondo1.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    color:cornsilk;
+    background-color:darkcyan;
+/*    text-shadow: 0 0 5px darkslategrey; */
+    border-radius: 15px 15px 0 0;
+    margin: 15px 0 0 0;
+    padding: 15px 0  0;
+    min-width: 680px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    border-radius: 0 0 15px 15px;
+    border-style: solid;
+    border-color: darkcyan;
+    border-width: 20px;
+    padding: 0 0 0 0;
+
+}
