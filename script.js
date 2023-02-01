@@ -26,9 +26,51 @@ for (let i = 0; i < 32; i++){
 // PARA CREAR TODOS LOS CUADRITOS COMO OBJETOS 
 
 const cuadritos = document.querySelectorAll(".cuadrito");
- 
+
+
+// PARA BORARR 
+
+function limpiar(){
+    cuadritos.forEach(cuadrito => cuadrito.style.backgroundColor = "white");
+}
+
+const btnBorrar = document.querySelector('#btnBorrar');
+btnBorrar.addEventListener('click', limpiar);
+
+// PARA AGREGAR COLORES
+
+function getColor(){
+    let color = "#";
+    for (let i = 0; i < 6; i ++){
+    let valoresHexadecimal = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+    const randomIndice = Math.floor(Math.random()*valoresHexadecimal.length);
+    const valor = valoresHexadecimal[randomIndice];
+    color = color + valor;
+    };
+    return color;
+};
+
+let blancoNegro = true;
+
+const btnColor = document.querySelector('#btnColor');
+btnColor.addEventListener('click', getColor);
+
+btnColor.addEventListener('click', () => {
+    if (btnColor.textContent == "¡A color!"){
+        btnColor.textContent = "B&N";
+    } else {
+        btnColor.textContent = "¡A color!"
+    }
+    }
+);
+    
 // PARA QUE CUANDO PASE POR ENCIMA DE UN CUADRITO, CONSIGA EL ID Y CON ESO CAMBIE EL ESTILO
 
 window.addEventListener('mouseover', function(e){
-    cuadritos[e.fromElement['id']].style.backgroundColor= "black";   
+    if (btnColor.textContent == "¡A color!"){
+        cuadritos[e.fromElement['id']].style.backgroundColor= "black";   
+    } else {
+        cuadritos[e.fromElement['id']].style.backgroundColor= getColor(); 
+    }
 });
+
